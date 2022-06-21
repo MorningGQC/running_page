@@ -1,6 +1,6 @@
 // const
 const MAPBOX_TOKEN =
-  'pk.eyJ1IjoieWlob25nMDYxOCIsImEiOiJja2J3M28xbG4wYzl0MzJxZm0ya2Fua2p2In0.PNKfkeQwYuyGOTT_x9BJ4Q';
+  'pk.eyJ1IjoiYmVuLTI5IiwiYSI6ImNrZ3Q4Ym9mMDBqMGYyeXFvODV2dWl6YzQifQ.gSKoWF-fMjhzU67TuDezJQ';
 const MUNICIPALITY_CITIES_ARR = [
   '北京市',
   '上海市',
@@ -28,7 +28,7 @@ const ENGLISH_INFO_MESSAGE = (yearLength, year) =>
 // not support English for now
 const CHINESE_LOCATION_INFO_MESSAGE_FIRST =
   '我希望能越跑越远';
-const CHINESE_LOCATION_INFO_MESSAGE_SECOND = 'Ceaca Trova';
+const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '我要从南走到北，还要从白走到黑';
 
 const INFO_MESSAGE = IS_CHINESE ? CHINESE_INFO_MESSAGE : ENGLISH_INFO_MESSAGE;
 const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松' : 'Full Marathon';
@@ -66,6 +66,6 @@ const nike = 'rgb(224,237,94)'; // if you want change the main color change here
 
 // If your map has an offset please change this line
 // issues #92 and #198
-export const NEED_FIX_MAP = false;
+export const NEED_FIX_MAP = true;
 export const MAIN_COLOR = nike;
 export const PROVINCE_FILL_COLOR = '#47b8e0';
