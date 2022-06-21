@@ -27,8 +27,8 @@ const ENGLISH_INFO_MESSAGE = (yearLength, year) =>
 
 // not support English for now
 const CHINESE_LOCATION_INFO_MESSAGE_FIRST =
-  '我希望能越跑越远';
-const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '我要从南走到北，还要从白走到黑';
+  '我要从南走到北，还要从白走到黑';
+const CHINESE_LOCATION_INFO_MESSAGE_SECOND = 'Ceaca Trova';
 
 const INFO_MESSAGE = IS_CHINESE ? CHINESE_INFO_MESSAGE : ENGLISH_INFO_MESSAGE;
 const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松' : 'Full Marathon';
