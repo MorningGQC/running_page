@@ -1,6 +1,6 @@
 // const
 const MAPBOX_TOKEN =
-  'pk.eyJ1IjoieWlob25nMDYxOCIsImEiOiJja2J3M28xbG4wYzl0MzJxZm0ya2Fua2p2In0.PNKfkeQwYuyGOTT_x9BJ4Q';
+  'pk.eyJ1IjoiYmVuLTI5IiwiYSI6ImNrZ3Q4Ym9mMDBqMGYyeXFvODV2dWl6YzQifQ.gSKoWF-fMjhzU67TuDezJQ';
 const MUNICIPALITY_CITIES_ARR = [
   '北京市',
   '上海市',
@@ -20,7 +20,7 @@ const IS_CHINESE = true;
 const USE_ANIMATION_FOR_GRID = false;
 const CHINESE_INFO_MESSAGE = (yearLength, year) => {
   const yearStr = year === 'Total' ? '所有' : ` ${year} `;
-  return `从第一次用 APP 记录跑步到现在 ${yearLength} 年了，这是${yearStr}跑过的路`;
+  return `从第一次记录跑步到现在 ${yearLength} 年了，这是${yearStr}跑过的路`;
 }
 const ENGLISH_INFO_MESSAGE = (yearLength, year) =>
   `Running Journey with ${yearLength} Years, the table shows year ${year} data`;
