@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: '/running_page', // Change to `/running_page` when running on github pages
   siteMetadata: {
     siteTitle: 'Morning\'s Running',
-    siteUrl: 'https://yihong.run',
+    siteUrl: 'https://morning-running-page.vercel.app/',
     logo: 'https://i.bmp.ovh/imgs/2022/06/22/2f670c453376da01.jpg',
     description: 'Personal site and blog',
     navLinks: [
