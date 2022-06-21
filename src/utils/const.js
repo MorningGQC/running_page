@@ -20,7 +20,7 @@ const IS_CHINESE = true;
 const USE_ANIMATION_FOR_GRID = false;
 const CHINESE_INFO_MESSAGE = (yearLength, year) => {
   const yearStr = year === 'Total' ? '所有' : ` ${year} `;
-  return `从第一次用 APP 记录跑步到现在已经 ${yearLength} 年，这是${yearStr}跑过的路`;
+  return `从第一次用 APP 记录跑步到现在已经 ${yearLength} 年了，这是${yearStr}跑过的路`;
 }
 const ENGLISH_INFO_MESSAGE = (yearLength, year) =>
   `Running Journey with ${yearLength} Years, the table shows year ${year} data`;
