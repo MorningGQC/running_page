@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/running_page', // Change to `/running_page` when running on github pages
   siteMetadata: {
-    siteTitle: 'Running Page',
+    siteTitle: 'Morning\'s Running',
     siteUrl: 'https://yihong.run',
     logo: 'https://i.bmp.ovh/imgs/2022/06/22/2f670c453376da01.jpg',
     description: 'Personal site and blog',
@@ -12,7 +12,7 @@ module.exports = {
       },
       {
         name: 'About',
-        url: 'https://github.com/yihong0618/running_page/blob/master/README-CN.md',
+        url: 'https://github.com/MorningGQC/running_page/blob/main/README-CN.md',
       },
     ],
   },
