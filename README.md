@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-# running_page-master
-=======
+# Running Page
+
 <p align="center">
   <img width="150" src="https://raw.githubusercontent.com/shaonianche/gallery/master/running_page/running_page_logo.png" />
 </p>
