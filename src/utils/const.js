@@ -5,7 +5,7 @@ const MUNICIPALITY_CITIES_ARR = [
   '北京市',
   '上海市',
   '天津市',
-  '重庆市',
+  //'重庆市',
   '香港特别行政区',
   '澳门特别行政区',
 ];
@@ -26,9 +26,8 @@ const ENGLISH_INFO_MESSAGE = (yearLength, year) =>
   `Running Journey with ${yearLength} Years, the table shows year ${year} data`;
 
 // not support English for now
-const CHINESE_LOCATION_INFO_MESSAGE_FIRST =
-  '我要从南走到北，还要从白走到黑';
-const CHINESE_LOCATION_INFO_MESSAGE_SECOND = 'Ceaca Trova';
+const CHINESE_LOCATION_INFO_MESSAGE_FIRST = '我要从南走到北，还要从白走到黑';
+const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '我有这双脚和双腿，也有这千山和万水';
 
 const INFO_MESSAGE = IS_CHINESE ? CHINESE_INFO_MESSAGE : ENGLISH_INFO_MESSAGE;
 const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松' : 'Full Marathon';
