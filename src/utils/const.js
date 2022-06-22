@@ -27,7 +27,7 @@ const ENGLISH_INFO_MESSAGE = (yearLength, year) =>
 
 // not support English for now
 const CHINESE_LOCATION_INFO_MESSAGE_FIRST =  '我要从南走到北，还要从白走到黑';
-const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '我有这双脚和双腿，有这千山和万水';
+const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '我有这双脚有这双腿，有这千山和万水';
 const CHINESE_LOCATION_INFO_MESSAGE_THIRD =  '我不想留在一个地方，也不愿有人跟随';
 
 const INFO_MESSAGE = IS_CHINESE ? CHINESE_INFO_MESSAGE : ENGLISH_INFO_MESSAGE;
