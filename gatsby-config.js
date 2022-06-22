@@ -12,7 +12,7 @@ module.exports = {
       },
       {
         name: 'About',
-        url: 'https://github.com/MorningGQC/running_page/blob/main/README-CN.md',
+        url: 'https://github.com/yihong0618/running_page/blob/master/README-CN.md',
       },
     ],
   },
