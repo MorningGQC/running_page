@@ -43,8 +43,8 @@ jobs:
       - name: Set Variables
         id: set_variables
         run: |
-          echo "::set-output name=PY::$(python -c 'import hashlib, sys;print(hashlib.sha256(sys.version.encode()+sys.executable.encode()).hexdigest())')"
-          echo "::set-output name=PIP_CACHE::$(pip cache dir)"
+          echo "PY=$(python -c 'import hashlib, sys;print(hashlib.sha256(sys.version.encode()+sys.executable.encode()).hexdigest())')" >> $GITHUB_OUTPUT
+          echo "PIP_CACHE=$(pip cache dir)" >> $GITHUB_OUTPUT
 
       - name: Cache PIP
         uses: actions/cache@v2
@@ -116,6 +116,7 @@ jobs:
         run: |
           git config --local user.email "${{ env.GITHUB_EMAIL }}"
           git config --local user.name "${{ env.GITHUB_NAME }}"
-          git commit -a -m 'update new runs' || echo "nothing to commit"
+          git add .
+          git commit -m 'update new runs' || echo "nothing to commit"
           git push || echo "nothing to push"
 
