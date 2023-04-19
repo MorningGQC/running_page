@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/running_page', // Change to `/running_page` when running on github pages
+  pathPrefix: process.env.PATH_PREFIX || '/',
   siteMetadata: {
     siteTitle: 'Morning\'s Running',
     siteUrl: 'https://morning-running.vercel.app/',
@@ -16,13 +16,20 @@ module.exports = {
       },
     ],
   },
-  plugins: [
+plugins: [
     'gatsby-transformer-json',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: './src/static/',
+      },
+    },
+    {
+      resolve: "gatsby-plugin-vercel",
+      options: {
+        // (optional) Prints metrics in the console when true
+        debug: false,
       },
     },
     {
@@ -64,9 +71,35 @@ module.exports = {
         start_url: '/',
         background_color: '#e1e1e1',
         theme_color: '#e1e1e1',
-        display: 'minimal-ui',
+        display: 'standalone',
         icon: 'src/images/favicon.png', // This path is relative to the root of the site.
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        runtimeCaching: [
+          {
+            urlPattern: /^https?:.*\/icons\/.*\.png/,
+            handler: `CacheFirst`,
+          },
+          {
+            urlPattern:
+              /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
+            handler: `StaleWhileRevalidate`,
+          },
+          {
+            urlPattern: /^https?:\/\/api\.mapbox\.com\//,
+            handler: `StaleWhileRevalidate`,
+          },
+          {
+            urlPattern: /^https?:.*\/page-data\/.*\.json/,
+            handler: `StaleWhileRevalidate`,
+          },
+        ],
+        skipWaiting: true,
+        clientsClaim: true,
+      },
+    },
   ],
 };
