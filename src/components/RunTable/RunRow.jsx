@@ -11,7 +11,7 @@ const RunRow = ({ runs, run, locateActivity, runIndex, setRunIndex }) => {
 
   const heartRate = run.average_heartrate;
 
-  const runTime = formatRunTime(run.moving_time);
+  const runTime = formatRunTime(distance,pace);
 
   // change click color
   const handleClick = (e, runs, run) => {
