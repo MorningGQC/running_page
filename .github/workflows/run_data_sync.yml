@@ -15,7 +15,6 @@ on:
       - scripts/garmin_sync.py
       - scripts/keep_sync.py
       - scripts/gpx_sync.py
-      - scripts/tcx_sync.py
       - scripts/garmin_to_strava_sync.py
       - requirements.txt
 
