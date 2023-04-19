@@ -1,5 +1,4 @@
-import { Analytics } from '@vercel/analytics/react';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from 'src/components/Layout';
 import LocationStat from 'src/components/LocationStat';
 import RunMap from 'src/components/RunMap';
@@ -36,41 +35,40 @@ const Index = () => {
   const [intervalId, setIntervalId] = useState();
 
   const [viewport, setViewport] = useState({
+    width: '100%',
+    height: 400,
     ...bounds,
   });
 
-  const changeByItem = (item, name, func, isChanged) => {
+  const changeByItem = (item, name, func) => {
     scrollToMap();
     setActivity(filterAndSortRuns(activities, item, func, sortDateFunc));
-    // if the year not change, we do not need to setYear
-    if (!isChanged) {
-      setRunIndex(-1);
-      setTitle(`${item} ${name} Running Heatmap`);
-    }
+    setTitle(`${item} ${name} Running Heatmap`);
+    setRunIndex(-1);
   };
 
   const changeYear = (y) => {
-
-    const isChanged = y === year;
     // default year
     setYear(y);
 
     if (viewport.zoom > 3) {
       setViewport({
+        width: '100%',
+        height: 400,
         ...bounds,
       });
     }
 
-    changeByItem(y, 'Year', filterYearRuns, isChanged);
+    changeByItem(y, 'Year', filterYearRuns);
     clearInterval(intervalId);
   };
 
   const changeCity = (city) => {
-    changeByItem(city, 'City', filterCityRuns, false);
+    changeByItem(city, 'City', filterCityRuns);
   };
 
   const changeTitle = (title) => {
-    changeByItem(title, 'Title', filterTitleRuns, false);
+    changeByItem(title, 'Title', filterTitleRuns);
   };
 
   const locateActivity = (run) => {
@@ -82,6 +80,8 @@ const Index = () => {
 
   useEffect(() => {
     setViewport({
+      width: '100%',
+      height: 500,
       ...bounds,
     });
   }, [geoData]);
@@ -101,7 +101,7 @@ const Index = () => {
       i += sliceNume;
     }, 100);
     setIntervalId(id);
-  }, [runs]);
+  }, [year]);
 
   // TODO refactor
   useEffect(() => {
@@ -167,10 +167,11 @@ const Index = () => {
   return (
     <Layout>
       <div className="mb5">
-        <div className="fl w-30-l">
+        <div className="w-100">
           <h1 className="f1 fw9 i">
             <a href="/">{siteTitle}</a>
           </h1>
+        </div>
         {viewport.zoom <= 3 && IS_CHINESE ? (
           <LocationStat
             changeYear={changeYear}
@@ -180,7 +181,6 @@ const Index = () => {
         ) : (
           <YearsStat year={year} onClick={changeYear} />
         )}
-        </div>
         <div className="fl w-100 w-70-l">
           <RunMap
             runs={runs}
@@ -206,8 +206,6 @@ const Index = () => {
           )}
         </div>
       </div>
-      {/* Enable Audiences in Vercel Analytics: https://vercel.com/docs/concepts/analytics/audiences/quickstart */}
-      <Analytics />
     </Layout>
   );
 };
